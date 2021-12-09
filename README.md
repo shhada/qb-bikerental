@@ -37,7 +37,7 @@ Add to ped-spawner under Config.Pedlist:
 -- Bike Rental
     {
 		model = `ig_maryann`,
-		coords = vector4(-208.46, -1010.08, 29.19), -- Alta St
+		coords = vector3(-208.46, -1010.08, 29.19), -- Alta St
 		heading = 72.95, 
 		gender = 'female',
 		animDict = "amb@world_human_jog_standing@female@idle_a", 
