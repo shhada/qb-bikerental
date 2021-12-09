@@ -10,7 +10,7 @@ Dependencies:
 * [qb-core](https://github.com/qbcore-framework/qb-core)
 * [qb-target](https://github.com/BerkieBb/qb-target)
 * [nh-context](https://github.com/nerohiro/nh-context) or [qb-menu](https://github.com/qbcore-framework/qb-menu)
-* [Electric Sharing Scooter](https://www.gta5-mods.com/vehicles/portuguese-electric-sharing-scooter-addon-livery-map-editor-xml) (already added in the stream folder)
+* [Electric Sharing Scooter](https://www.gta5-mods.com/vehicles/portuguese-electric-sharing-scooter-addon-livery-map-editor-xml) (already added in the stream folder, updated meta files)
 
 set the price for the bikes in the config (default: $150)
 
