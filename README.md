@@ -11,39 +11,31 @@ Dependencies:
 * [qb-target](https://github.com/BerkieBb/qb-target)
 * [nh-context](https://github.com/nerohiro/nh-context) or [qb-menu](https://github.com/qbcore-framework/qb-menu)
 * [Electric Sharing Scooter](https://www.gta5-mods.com/vehicles/portuguese-electric-sharing-scooter-addon-livery-map-editor-xml) (already added in the stream folder)
-* [ped-spawner](https://github.com/sjpfeiffer/ped_spawner)
 
 set the price for the bikes in the config (default: $150)
 
 
-Add to qb-target under Config.TargetModels:
+Add to qb-target under Config.Peds (DON'T FORGET TO FILL IN THAT NUMBER):
 ```
-    ["bikerental"] = {
-        models = {
-            `ig_maryann`,
-        },
-        options = {
-            {
-                type = "client",
-                event = "Night:rented",
-                icon = "fas fa-bicycle",
-                label = "Rent a Bike",
+    [<ADD NUMBER HERE>] = {
+        model = 'ig_maryann',
+        coords = vector4(-208.46, -1010.08, 29.19, 72.95), -- Alta St
+        minusOne = true,
+        freeze = true,
+        invincible = true,
+        blockevents = true,
+        scenario = 'WORLD_HUMAN_MUSCLE_FLEX'
+        target = {
+            options = {
+                {
+                    type = "client",
+                    event = "qb-bikerental:rented",
+                    icon = "fas fa-bicycle",
+                    label = "Rent a Bike",
+                },
             },
+            distance = 3.0
         },
-        distance = 3.0
-    },
-```
-
-Add to ped-spawner under Config.Pedlist:
-```
--- Bike Rental
-    {
-		model = `ig_maryann`,
-		coords = vector3(-208.46, -1010.08, 29.19), -- Alta St
-		heading = 72.95, 
-		gender = 'female',
-		animDict = "amb@world_human_jog_standing@female@idle_a", 
-		animName = "idle_a",
     },
 ```
 
@@ -55,3 +47,4 @@ In qb-menu it's `'qb-menu:client:openMenu'`
 ## TODO
 * add vehicles to config
 * add custom price per vehicle
+* update to latest version of nh-context and qb-menu
