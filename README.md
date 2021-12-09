@@ -9,7 +9,7 @@ Dependencies:
 * [qb-target](https://github.com/BerkieBb/qb-target)
 * [nh-context](https://github.com/nerohiro/nh-context) or [qb-menu](https://github.com/qbcore-framework/qb-menu)
 * [Electric Sharing Scooter](https://www.gta5-mods.com/vehicles/portuguese-electric-sharing-scooter-addon-livery-map-editor-xml) (already added in the stream folder)
-* any ped spawning script (using inf-peds from Infinity Core)
+* [ped-spawner](https://github.com/sjpfeiffer/ped_spawner)
 
 set the price for the bikes in the config (default: $150)
 
@@ -32,14 +32,16 @@ Add to qb-target under Config.TargetModels:
     },
 ```
 
-Add to inf-peds under Config.Pedlist:
+Add to ped-spawner under Config.Pedlist:
 ```
 -- Bike Rental
     {
 		model = `ig_maryann`,
-		coords = vector4(-208.46, -1010.08, 29.19, 72.95), -- Alta St
+		coords = vector4(-208.46, -1010.08, 29.19), -- Alta St
+		heading = 72.95, 
 		gender = 'female',
-		scenario = 'WORLD_HUMAN_MUSCLE_FLEX'
+		animDict = "amb@world_human_jog_standing@female@idle_a", 
+		animName = "idle_a",
     },
 ```
 
