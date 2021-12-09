@@ -2,7 +2,7 @@
 
 <CHandlingDataMgr>
   <HandlingData>
-	<Item type="CHandlingData">
+    <Item type="CHandlingData">
       <handlingName>serv_electricscooter</handlingName>
       <fMass value="105.000000" />
       <fInitialDragCoeff value="85.000000" />
