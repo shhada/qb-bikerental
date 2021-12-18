@@ -45,6 +45,6 @@ In qb-menu it's `'qb-menu:client:openMenu'`
 
 
 ## TODO
-* add vehicles to config
+* ~add vehicles to config~
 * add custom price per vehicle
 * update to latest version of nh-context and qb-menu
