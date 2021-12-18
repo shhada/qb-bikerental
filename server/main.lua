@@ -1,24 +1,24 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local bikeprice = {}
 
-QBCore.Functions.CreateCallback('qb-bikerental:checkPrice', function(source, cb)
-    local Player = QBCore.Functions.GetPlayer(source)
-    local CitizenId = Player.PlayerData.citizenid
+RegisterServerEvent('qb-bikerental:Pay', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local PlayerMoney = {
+        cash = Player.PlayerData.money.cash,
+        bank = Player.PlayerData.money.bank
+    }
+    local missingMoney = 0
 
-    if Player.PlayerData.money.bank >= Config.BikePrice then
-        bikeprice[CitizenId] = "bank"
-        Player.Functions.RemoveMoney('bank', Config.BikePrice)
-        cb(true)
+    if PlayerMoney.cash >= Config.Price then
+        Player.Functions.RemoveMoney('cash', Config.Price, "bike-rental")
+    elseif PlayerMoney.bank >= Config.Price then
+        Player.Functions.RemoveMoney('bank', Config.Price, "bike-rental")
     else
-        cb(false)
+        if PlayerMoney.bank > PlayerMoney.cash then
+            missingMoney = (Config.Price - PlayerMoney.bank)
+        else
+            missingMoney = (Config.Price - PlayerMoney.cash)
+        end
+        TriggerClientEvent('QBCore:Notify', src, 'Not Enough Money, You Are Missing $' .. missingMoney .. '', 'error')
     end
 end)
-
-RegisterServerEvent('qb-bikerental:hasMoney', function(hasMoney)
-    local user = source
-    local Player = QBCore.Functions.GetPlayer(user)
-
-    if Player then
-        Player.Functions.RemoveMoney('bank', hasMOney)
-    end
-end)  
