@@ -239,7 +239,7 @@ RegisterNetEvent('qb-bikerental:rentBike', function()
             header = "[ RETURN ]",
             txt = "",
             params = {
-                event = "qb-bikerental:deliver",
+                event = "qb-bikerental:deliverBike",
                 args = {
                 }
             }
