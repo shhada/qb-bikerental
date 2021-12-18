@@ -140,7 +140,7 @@ end) ]]
 
 
 RegisterNetEvent('qb-bikerental:rentBike', function()
-    TriggerEvent('nh-context2:sendMenu', {
+    TriggerEvent('nh-context:createMenu', {
         {
             id = 1,
             header = "Rentals ($"..Config.Price..")",
