@@ -3,7 +3,7 @@
   <residentTxd>vehshare</residentTxd>
   <residentAnims />
   <InitDatas>
-	  <Item>
+    <Item>
       <modelName>electricscooter</modelName>
       <txdName>electricscooter</txdName>
       <handlingId>electricscooter</handlingId>
@@ -18,7 +18,7 @@
       <audioNameHash>caddy</audioNameHash>
       <layout>LAYOUT_BIKE_CHOPPER</layout>
       <coverBoundOffsets>BIKE_COVER_OFFSET_INFO</coverBoundOffsets>
-	    <POVTuningInfo>DAEMON_POV_TUNING</POVTuningInfo>
+      <POVTuningInfo>DAEMON_POV_TUNING</POVTuningInfo>
       <explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
       <scenarioLayout />
       <cameraName>FOLLOW_UPRIGHT_BIKE_CAMERA</cameraName>
