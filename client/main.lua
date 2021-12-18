@@ -12,86 +12,88 @@ end)
 
 
 RegisterNetEvent('qb-bikerental:bmx', function(bike)
-    local rent = true
     local vehicle = bike.vehicle
     local rentalbike = nil
-    QBCore.Functions.TriggerCallback('qb-bikerental:checkPrice', function(hasMoney)
-        if hasMoney then
-            if vehicle == 'bmx' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            elseif  vehicle == 'cruiser' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            elseif vehicle ==  'fixter' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            elseif vehicle == 'scorcher' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            elseif vehicle == 'tribike' then 
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            elseif vehicle == 'tribike2' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            elseif vehicle == 'tribike3' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-            elseif vehicle == 'serv_electricscooter' then
-                QBCore.Functions.SpawnVehicle(vehicle, function(veh)
-                    rentalvehicle = veh
-                    TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                    TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
-                    exports['LegacyFuel']:SetFuel(veh, 100.0)
-                end)
-                TriggerServerEvent('qb-bikerental:hasMoney', Config.BikePrice)
-            end
-        else 
-            TriggerEvent('QBCore:Notify', 'You don\'t have enough money!', 'error')
+        if vehicle == 'bmx' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
+        elseif  vehicle == 'cruiser' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
+        elseif vehicle ==  'fixter' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
+        elseif vehicle == 'scorcher' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
+        elseif vehicle == 'tribike' then 
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
+        elseif vehicle == 'tribike2' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
+        elseif vehicle == 'tribike3' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+        elseif vehicle == 'electricscooter' then
+            QBCore.Functions.SpawnVehicle(vehicle, function(veh)
+                rentalvehicle = veh
+                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+                TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+                exports['LegacyFuel']:SetFuel(veh, 100.0)
+            end)
+            TriggerServerEvent('qb-bikerental:Pay')
         end
-    end, Config.BikePrice)    
 end)
 
-RegisterNetEvent('qb-bikerental:deliver', function()
+RegisterNetEvent('qb-bikerental:getBike', function(getbike)
+    QBCore.Functions.SpawnVehicle(getbike.vehicle, function(veh)
+        TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
+        TriggerEvent("vehiclekeys:client:SetOwner", GetVehicleNumberPlateText(veh))
+        exports['LegacyFuel']:SetFuel(veh, 100.0)
+        TriggerServerEvent('qb-bikerental:Pay', Config.Price)
+    end)
+end)
+
+RegisterNetEvent('qb-bikerental:deliverBike', function()
     local Player = QBCore.Functions.GetPlayerData()
     local rental = GetVehiclePedIsIn(PlayerPedId(), true)
-    local thingy = IsPedInVehicle(PlayerPedId(), rental, false)
-    if thingy ~= false then
+    local hasbike = IsPedInVehicle(PlayerPedId(), rental, false)
+    if hasbike ~= false then
         Citizen.Wait(200)
         QBCore.Functions.DeleteVehicle(rental)
         TriggerEvent('QBCore:Notify','Thanks for returning your rental!')
@@ -100,11 +102,48 @@ RegisterNetEvent('qb-bikerental:deliver', function()
     end
 end)
 
-RegisterNetEvent('qb-bikerental:rented', function()
-    TriggerEvent('nh-context:sendMenu', {
+
+--[[ RegisterNetEvent('qb-bikerental:rentBike', function()
+    TriggerEvent('nh-context2:sendMenu', {
         {
             id = 1,
-            header = "Rentals ($"..Config.BikePrice..")",
+            header = "RENTALS ($"..Config.Price..")",
+            txt = ""
+        }
+    })
+    for k, v in pairs(Config.Bikes) do
+        TriggerEvent('nh-context2:sendMenu', {
+            {
+                id = 2,
+                header = string.upper(Config.Bikes[k].model),
+                txt = Config.Bikes[k].description,
+                params = {
+                    event = "qb-bikerental:getBike",
+                    args = {
+                        vehicle = Config.Bikes[k].model,
+                    }
+                }
+            }
+        })
+    end
+    TriggerEvent('nh-context2:sendMenu', {
+        {
+            id = 3,
+            header = "[ RETURN ]",
+            txt = '',
+            params = {
+                event = "qb-bikerental:deliverBike",
+            }
+        }
+    })
+end) ]]
+
+
+RegisterNetEvent('qb-bikerental:rentBike', function()
+    TriggerEvent('nh-context2:sendMenu', {
+        {
+            id = 1,
+            header = "Rentals ($"..Config.Price..")",
             txt = ""
         },
         {
@@ -191,7 +230,7 @@ RegisterNetEvent('qb-bikerental:rented', function()
             params = {
                 event = "qb-bikerental:bmx",
                 args = {
-                    vehicle = 'serv_electricscooter',
+                    vehicle = 'electricscooter',
                 }
             }
         },
