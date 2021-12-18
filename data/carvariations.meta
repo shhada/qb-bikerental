@@ -3,7 +3,7 @@
 <CVehicleModelInfoVariation>
   <variationData> 
 <Item>
-    <modelName>serv_electricscooter</modelName>
+    <modelName>electricscooter</modelName>
       <colors>
         <Item>
           <indices content="char_array">
@@ -11,9 +11,9 @@
             132
             12
             156 
-          </indices>
+	      </indices>
           <liveries>
-            <Item value="false" />
+						<Item value="false" />
             <Item value="true" />
             <Item value="false" />
             <Item value="false" />

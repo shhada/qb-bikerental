@@ -2,8 +2,8 @@
 
 <CHandlingDataMgr>
   <HandlingData>
-    <Item type="CHandlingData">
-      <handlingName>serv_electricscooter</handlingName>
+	<Item type="CHandlingData">
+      <handlingName>electricscooter</handlingName>
       <fMass value="105.000000" />
       <fInitialDragCoeff value="85.000000" />
       <fPercentSubmerged value="95.000000" />
